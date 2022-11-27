@@ -1,17 +1,25 @@
+html{
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+
+}
 .square {
 border: 1px solid black;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 30px;
-height: 30px;
+width: 25px;
+height: 25px;
 color: white;
 user-select: none;
+margin: 0.5px;
 }
 .line {
     display:flex;
     flex-direction: row;
-    
 }
 
 .square.invisible{
@@ -24,4 +32,26 @@ user-select: none;
 }
 .square.selected{
     border:1px solid blue !important;
+}
+p {
+font-size: small;
+}
+#agrupar_jogo{
+    display: flex;
+    flex-direction: row;
+
+}
+#resposta{
+width: 100%;
+display: flex;
+flex-direction: row;
+position: relative;
+height: 800px;
+
+}
+#resposta img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
 }
