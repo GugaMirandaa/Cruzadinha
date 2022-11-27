@@ -1,0 +1,27 @@
+.square {
+border: 1px solid black;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30px;
+height: 30px;
+color: white;
+user-select: none;
+}
+.line {
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.square.invisible{
+    visibility: hidden;
+}
+
+.square.visible{
+    color: black!important;
+    
+}
+.square.selected{
+    border:1px solid blue !important;
+}

@@ -1,355 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Cruzadinha</title>
-</head>
-<body>
+  </head>
+  <body>
+    <input id="input_palavra" />
+    <button onclick="exibe()">Exibir!</button> <br />
 
-    <input id="input_palavra">
-    <button onclick="exibe()">Exibir!</button> <br>
-
-    <input id="lin1col13" type="text" maxlength="1">
-    <input id="lin1col14" type="text" maxlength="1">
-    <input id="lin1col15" type="text" maxlength="1">
-    <input id="lin2col12" type="text" maxlength="1">
-    <input id="lin2col15" type="text" maxlength="1">
-    <input id="lin3col11" type="text" maxlength="1">
-    <input id="lin3col12" type="text" maxlength="1">
-    <input id="lin3col13" type="text" maxlength="1">
-    <input id="lin3col14" type="text" maxlength="1">
-    <input id="lin3col15" type="text" maxlength="1">
-    <input id="lin4col9" type="text" maxlength="1">
-    <input id="lin4col12" type="text" maxlength="1">
-    <input id="lin4col15" type="text" maxlength="1">
-    <input id="lin5col9" type="text" maxlength="1">
-    <input id="lin5col15" type="text" maxlength="1">
-    <input id="lin6col9" type="text" maxlength="1">
-    <input id="lin6col15" type="text" maxlength="1">
-    <input id="lin6col16" type="text" maxlength="1">
-    <input id="lin7col9" type="text" maxlength="1">
-    <input id="lin7col15" type="text" maxlength="1">
-    <input id="lin8col9" type="text" maxlength="1">
-    <input id="lin8col15" type="text" maxlength="1">
-    <input id="lin8col16" type="text" maxlength="1">
-    <input id="lin8col17" type="text" maxlength="1">
-    <input id="lin9col8" type="text" maxlength="1">
-    <input id="lin9col9" type="text" maxlength="1">
-    <input id="lin9col10" type="text" maxlength="1">
-    <input id="lin9col11" type="text" maxlength="1">
-    <input id="lin9col12" type="text" maxlength="1">
-    <input id="lin9col13" type="text" maxlength="1">
-    <input id="lin9col14" type="text" maxlength="1">
-    <input id="lin9col15" type="text" maxlength="1">
-    <input id="lin10col9" type="text" maxlength="1">
-    <input id="lin10col15" type="text" maxlength="1">
-    <input id="lin11col13" type="text" maxlength="1">
-    <input id="lin11col14" type="text" maxlength="1">
-    <input id="lin11col15" type="text" maxlength="1">
-    <input id="lin11col16" type="text" maxlength="1">
-    <input id="lin11col17" type="text" maxlength="1">
-    <input id="lin12col15" type="text" maxlength="1">
-    <input id="lin13col13" type="text" maxlength="1">
-    <input id="lin13col15" type="text" maxlength="1">
-    <input id="lin14col13" type="text" maxlength="1">
-    <input id="lin14col14" type="text" maxlength="1">
-    <input id="lin14col15" type="text" maxlength="1">
-    <input id="lin14col16" type="text" maxlength="1">
-    <input id="lin14col17" type="text" maxlength="1">
-    <input id="lin14col18" type="text" maxlength="1">
-    <input id="lin14col19" type="text" maxlength="1">
-    <input id="lin14col20" type="text" maxlength="1">
-    <input id="lin15col13" type="text" maxlength="1">
-    <input id="lin15col19" type="text" maxlength="1">
-    <input id="lin16col2" type="text" maxlength="1">
-    <input id="lin16col3" type="text" maxlength="1">
-    <input id="lin16col4" type="text" maxlength="1">
-    <input id="lin16col5" type="text" maxlength="1">
-    <input id="lin16col6" type="text" maxlength="1">
-    <input id="lin16col7" type="text" maxlength="1">
-    <input id="lin16col8" type="text" maxlength="1">
-    <input id="lin16col9" type="text" maxlength="1">
-    <input id="lin16col10" type="text" maxlength="1">
-    <input id="lin16col11" type="text" maxlength="1">
-    <input id="lin16col12" type="text" maxlength="1">
-    <input id="lin16col13" type="text" maxlength="1">
-    <input id="lin16col14" type="text" maxlength="1">
-    <input id="lin16col19" type="text" maxlength="1">
-    <input id="lin17col5" type="text" maxlength="1">
-    <input id="lin17col13" type="text" maxlength="1">
-    <input id="lin18col12" type="text" maxlength="1">
-    <input id="lin18col13" type="text" maxlength="1">
-    <input id="lin19col13" type="text" maxlength="1">
-    <input id="lin20col15" type="text" maxlength="1">
-    <input id="lin20col16" type="text" maxlength="1">
-    <input id="lin20col17" type="text" maxlength="1">
-    <input id="lin21col13" type="text" maxlength="1">
-    
-</body>
+    <div id="cruzadinha_teste"></div>
+  </body>
 </html>
 <script>
-    
-    function exibe() {
-    var matriz = [ 
-    [0,0,0,0,0,0,0,0,0,0,0,0,'r','a','m',0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,'c',0,0,'e',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,'e','p','r','o','m',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'d',0,0,'u',0,0,'o',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'a',0,0,0,0,0,'r',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'t',0,0,0,0,0,'i','7',0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'a',0,0,0,0,0,'a',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'b',0,0,0,0,0,'d','m','a',0,0,0],
-    [0,0,0,0,0,0,0,0,'q','u','a','d','c','o','r','e',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,'s',0,0,0,0,0,'m',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'f','l','a','s','h',0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'s',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'a',0,'s',0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'d','u','a','l','c','o','r','e'],
-    [0,0,0,0,0,'5',0,0,0,0,0,0,0,'r',0,0,0,0,0,'o',0],
-    [0,0,'r','e','g','i','s','t','r','a','d','o','r','e','s',0,0,0,0,'m',0],                
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'s',0,0,0,0,0,0,0],               
-    [0,0,0,0,0,0,0,0,0,0,0,0,'c','s',0,0,0,0,0,0,0],               
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'b',0,0,0,0,0,0,0],               
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'u','l','a',0,0,0,0,0],              
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,'s',0,0,0,0,0,0,0] ];
-
-    
-    for(let lin=0 ; lin<21 ; lin++){
-     for(let col=0; col<21 ; col++) { 
-     document.write(matriz[lin][col] + "  ");
-     
-     document.write("<br />");
-
-      
-     }
-}
-
-if (lin1col13=='r') {
-
-} 
-else if (lin1col13=='a'){
-
-}
-else if (lin1col15=='m'){
-
-}
-else if (lin2col12=='c'){
-
-}
-else if (lin2col15=='e'){
-
-} 
-else if (lin3col11=='e'){
-
-}
-else if (lin3col12=='p'){
-
-}  
-else if (lin3col13=='r'){
-
-} 
-else if (lin3col14=='o'){
-
-} 
-else if (lin3col15=='m'){
-
-} 
-else if (lin4col9=='d'){
-
-}
-else if (lin4col12=='u'){
-
-} 
-else if (lin4col15=='o'){
-
-} 
-else if (lin5col9=='a'){
-
-}
-else if (lin5col15=='r'){
-
-} 
-else if (lin6col9=='t'){
-
-}
-else if (lin6col15=='i'){
-
-} 
-else if (lin6col16=='5'){
-
-}
-else if (lin7col9=='a'){
-
-}
-else if (lin7col15=='a'){
-
-} 
-else if (lin8col9=='b'){
-
-}
-else if (lin8col15=='d'){
-
-} 
-else if (lin8col16=='m'){
-
-} 
-else if (lin8col17=='a'){
-
-} 
-else if (lin9col8=='q'){
-
-}
-else if (lin9col9=='u'){
-
-}
-else if (lin9col10=='a'){
-
-} 
-else if (lin9col11=='d'){
-
-} 
-else if (lin9col12=='c'){
-
-} 
-else if (lin9col13=='o'){
-
-} 
-else if (lin9col14=='r'){
-
-} 
-else if (lin9col15=='e'){
-
-} 
-else if (lin10col9=='s'){
-
-} 
-else if (lin10col15=='m'){
-
-}
-else if(lin11col13 == 'f') {
-
-}
-else if(lin11col14 == 'l') {
-
-}
-else if(lin11col15 == 'a') {
-
-}
-else if(lin11col16 == 's') {
-
-}
-else if(lin11col17 == 'h') {
-
-}
-else if(lin12col15 == 's') {
-
-}
-else if(lin13col13 == 'a') {
-
-}
-else if(lin13col15 == 's') {
-
-}
-else if(lin14col13 == 'd') {
-
-}
-else if(lin14col14 == 'u') {
-
-}
-else if(lin14col15 == 'a') {
-
-}
-else if(lin14col16 == 'l') {
-
-}
-else if(lin14col17 == 'c') {
-
-}
-else if(lin14col18 == 'o') {
-
-}
-else if(lin14col19 == 'r') {
-
-}
-else if(lin14col20 == 'e') {
-
-}
-else if(lin15col13 == 'r') {
-
-}
-else if(lin15col19 == 'o') {
-
-}
-else if(lin16col2 == 'r') {
-
-}
-else if(lin16col3 == 'e') {
-
-}
-else if(lin16col4 == 'g') {
-
-}
-else if(lin16col5 == 'i') {
-
-}
-else if(lin16col6 == 's') {
-
-}
-else if(lin16col7 == 't') {
-
-}
-else if(lin16col8 == 'r') {
-
-}
-else if(lin16col9 == 'a') {
-
-}
-else if(lin16col10 == 'd') {
-
-}
-else if(lin16col11 == 'o') {
-
-}
-else if(lin16col12 == 'r') {
-
-}
-else if(lin16col13 == 'e') {
-
-}
-else if(lin16col14 == 's') {
-
-}
-else if(lin16col19 == 'm') {
-
-}
-else if(lin17col5 == '7') {
-
-}
-else if(lin17col13 == 's') {
-
-}
-else if(lin18col12 == 'c') {
-
-}
-else if(lin18col13 == 's') {
-
-}
-else if(lin19col13 == 'b') {
-
-}
-else if(lin20col15 == 'u') {
-
-}
-else if(lin20col16 == 'l') {
-
-}
-else if(lin20col17 == 'a') {
-
-}
-else if(lin21col13 == 's') {
-
-}
-    }    
+  var matriz2 = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "r", "a", "m", 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "c", 0, 0, "e", 0, 0, 0, 0, 0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,"e","p","r","o","m",0,0,0,0,0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "d", 0, 0, "u", 0, 0, "o", 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "a", 0, 0, 0, 0, 0, "r", 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "t", 0, 0, 0, 0, 0, "i", "7", 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "a", 0, 0, 0, 0, 0, "a", 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "b", 0, 0, 0, 0, 0, "d", "m", "a", 0, 0, 0],
+    [0,0,0,0,0,0,0,0,0,"q","u","a","d","c","o","r","e",0,0,0,0,0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "s", 0, 0, 0, 0, 0, "m", 0, 0, 0, 0, 0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,"f","l","a","s","h",0,0,0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "s", 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "a", 0, "s", 0, 0, 0, 0, 0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,"d","u","a","l","c","o","r","e",],
+    [0, 0, 0, 0, 0, 0, "5", 0, 0, 0, 0, 0, 0, 0, "r", 0, 0, 0, 0, 0, "o", 0],
+    [0,0,0,"r","e","g","i","s","t","r","a","d","o","r","e","s",0,0,0,0,"m",0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "s", 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "c", "s", 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "b", 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "u", "l", "a", 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "s", 0, 0, 0, 0, 0, 0, 0],
+  ];
+
+  var elementos = [[]];
+  var tentativa = 0;
+  var tentativa_id = 0;
+
+  for (var i = 0; i < matriz2.length; i++) {
+    elementos.push(new Array());
+  }
+  var cruzadinha = document.getElementById("cruzadinha_teste");
+  for (var i = 0; i < matriz2.length; i++) {
+    for (var c = 0; c < matriz2[i].length; c++) {
+      var new_div = document.createElement("div");
+      new_div.setAttribute("class", "square");
+      if (matriz2[i][c] === 0 ) {
+        new_div.classList.add("invisible");
+      }
+      new_div.innerHTML = matriz2[i][c];
+      new_div.setAttribute("id", "lin" + i + "col" + c);
+
+      elementos[i].push(new_div);
+    }
+    var linha = document.createElement("div");
+    linha.setAttribute("class", "line");
+    cruzadinha.appendChild(linha);
+    elementos[i].forEach((element) => linha.appendChild(element));
+  }
+  for (var i = 0; i < elementos.length; i++) {
+    for (var c = 0; c < elementos[i].length; c++) {
+      document
+        .getElementById(elementos[i][c].id)
+        .addEventListener("click", function clicado(event) {
+          event.target.classList.toggle("selected");
+          tentativa = event.target.innerHTML;
+          tentativa_id = event.target.id;
+          console.log(tentativa);
+          desmarcar(event.target.id);
+        });
+    }
+  }
+  function desmarcar(id) {
+    var squares = document.getElementsByClassName("square");
+    Array.from(squares).forEach((element) => {
+      if (element.id != id) {
+        element.classList.remove("selected");
+      }
+    });
+  }
+
+  function exibe() {
+    var input_letra = document.getElementById("input_palavra").value;
+    if (tentativa == 0){
+        alert('Selecione um campo')
+    }
+    if (input_letra == tentativa) {
+      document.getElementById(tentativa_id).classList.add("visible");
+    }
+    else{
+        alert('Letra incorreta')
+    }
+  }
 </script>
